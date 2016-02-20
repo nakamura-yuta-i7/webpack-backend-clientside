@@ -1,0 +1,7 @@
+node_modules/
+.trashbox
+bower_components/
+public/dist/
+backend/dist/
+passwords.yaml
+npm-debug.log
