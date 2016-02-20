@@ -2,8 +2,14 @@
 $(function() {
 	
 	// img src = "data:image/png;base64 ~~~~~~~"
-	var dena_logo = require("./DeNA_logo.png")
-	$("body").append( $(`<img src="${dena_logo}" height="40">`) )
+	var dena_logo_base64 = require("./DeNA_logo.png")
+	$("body").append( 
+		$("<div></div>").append(
+			$('<p>＜img src = data:image/png;base64 ~~~~~~~＞サンプル</p>')
+		).append(
+			$('<img src="'+ dena_logo_base64 +'" height="40">')
+		)
+	)
 	
 	require("./normal.css")
 	$("body").append($('<div class="normal-css">normal css</div>'))
@@ -14,10 +20,10 @@ $(function() {
 	$("body").append($('<div class="postcss autoprefixer">postcss / autoprefixer</div>'))
 	
 	require("./sass.scss")
-	$("body").append($('<div class="sass-scss">sass</div>'))
+	$("body").append($('<div class="sass-scss">sass / autoprefixer</div>'))
 	
 	require("./less.less")
-	$("body").append($('<div class="less-less">less</div>'))
+	$("body").append($('<div class="less-less">less / autoprefixer</div>'))
 
 	var jade = require("./JadeTemplate.jade")()
 	console.log( "JadeTemplate", jade );

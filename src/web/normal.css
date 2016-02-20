@@ -7,7 +7,7 @@ html {
 [lang=ja-JP] {
     font-family: "Apple TP", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
-
+p { margin:0; }
 .normal-css {
   color:　rgb(0, 162, 142);
 }
