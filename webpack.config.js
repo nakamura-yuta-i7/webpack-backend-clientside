@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin")
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+// global.Promise = require("bluebird") // for angular2, nodejs v0.12.7
 
 // =======================================
 // webpack client & backend(for nodejs)
@@ -92,7 +93,8 @@ module.exports = [
 			// 'React': 'React',
 			// 'ReactDOM': 'ReactDOM',
 			// 'jquery': '$',
-		}
+		},
+		devtool: 'sourcemap'
 	},
 	
 	// ===========================================

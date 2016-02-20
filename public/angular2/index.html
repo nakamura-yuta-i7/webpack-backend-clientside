@@ -4,8 +4,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<!-- 1. Load libraries -->
-		<!-- TODO: CDN 読み込み から main.ts へ移行、 -->
+		<!-- 1. Load Webpack complied css resources -->
+		<link href="/dist/angular2/main.css" rel="stylesheet" type="text/css"/>
+		
+		<!-- 2. Load libraries -->
+		<!-- TODO: CDN読み込みからmain.tsへ移行すると初期表示がもう少し高速化できる筈。
+		           1. すべてnpm installが可能であれば main.ts へ
+		           2. 無理なら jspm, bower, git を調べて一つのファイルに圧縮して入れる -->
 		<!-- IE required polyfills, in this exact order -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
@@ -15,15 +20,17 @@
 		<script src="https://code.angularjs.org/2.0.0-beta.6/Rx.js"></script>
 		<script src="https://code.angularjs.org/2.0.0-beta.6/angular2.dev.js"></script>
 		
-		<!-- Some use: file upload progress status, etc ... -->
+		<!-- Some use: File upload progress status, etc ... -->
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 		
-		<!-- 2. Configure Webpack complied resources -->
-		<script src="/dist/init.js"></script>
-		<script src="/dist/angular2/main.js"></script>
-		<link href="/dist/angular2/main.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
+		
 		<my-app>Angular2 Loading...</my-app>
+		
+		<!-- 3. Load Webpack complied resources -->
+		<script src="/dist/init.js"></script>
+		<script src="/dist/angular2/main.js"></script>
+		
 	</body>
 </html>
