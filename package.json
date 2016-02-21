@@ -2,6 +2,15 @@
   "name": "typescript-web-backend",
   "version": "1.0.0",
   "main": "webpack.config.js",
+  "scripts": {
+    "start": "npm run webpack; npm run web-server",
+    "web-server": "node ./backend/dist/server.js",
+    "webpack": "webpack --progress --colors",
+    "webpack:w": "webpack --progress --colors --watch",
+    "supervisor": "./node_modules/.bin/supervisor --watch ./backend/dist/ -i public,src ./backend/dist/server.js",
+    "develop": " concurrent 'npm run webpack:w' 'npm run supervisor' ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "angular2": "alexeagle/angular#8bfbe4",
     "autoprefixer": "^6.3.3",
@@ -65,13 +74,6 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.13"
-  },
-  "scripts": {
-    "web-server": "node ./backend/dist/server.js",
-    "webpack": "webpack --progress --colors",
-    "webpack:w": "webpack --progress --colors --watch",
-    "develop": "npm run webpack; concurrent 'npm run webpack:w' 'npm run web-server' ",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

@@ -2,12 +2,12 @@
 $(function() {
 	
 	// img src = "data:image/png;base64 ~~~~~~~"
-	var dena_logo_base64 = require("./DeNA_logo.png")
+	var logo_base64 = require("./logo-ang2.png")
 	$("body").append( 
-		$("<div></div>").append(
-			$('<p>＜img src = data:image/png;base64 ~~~~~~~＞サンプル</p>')
+		$("<div style='background:RGBA(11,116,213, 1);'></div>").append(
+			$('<p style="color:#fff;">＜img src = data:image/png;base64 ~~~~~~~＞サンプル</p>')
 		).append(
-			$('<img src="'+ dena_logo_base64 +'" height="40">')
+			$('<a href="/angular2/"><img src="'+ logo_base64 +'" height="40"></a>')
 		)
 	)
 	
